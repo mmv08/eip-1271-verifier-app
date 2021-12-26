@@ -28,7 +28,7 @@ function WalletProvider(props: PropsWithChildren) {
       state,
       {
         connectWallet: async () => {
-          const accounts = await window.ethereum.request({
+          await window.ethereum.request({
             method: "eth_requestAccounts",
           })
 
