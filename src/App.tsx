@@ -8,13 +8,12 @@ import { isValidSignature } from "./isValidSignature"
 
 const App = () => {
   const [wallet, { connectWallet }] = useWallet()
-  const [state, setState] = createStore({
-    signatureValid: false,
+  const [state, setFormState] = createStore({
     formError: "",
   })
 
   const onSubmit = async (e: SubmitEvent) => {
-    setState((s) => ({ signatureValid: false, formError: "" }))
+    setFormState({ formError: "" })
     e.preventDefault()
 
     const {
@@ -25,17 +24,17 @@ const App = () => {
     } = e.target?.elements
 
     if (!message) {
-      setState((s) => ({ ...s, formError: "Message is required" }))
+      setFormState({ formError: "Message is required" })
       return
     }
 
     if (!ethers.utils.getAddress(signerAddress)) {
-      setState((s) => ({ ...s, formError: "Invalid signer address" }))
+      setFormState({ formError: "Invalid signer address" })
       return
     }
 
     if (!ethers.utils.isHexString(signature)) {
-      setState((s) => ({ ...s, formError: "Signature must be a hex string" }))
+      setFormState({ formError: "Signature must be a hex string" })
       return
     }
 
