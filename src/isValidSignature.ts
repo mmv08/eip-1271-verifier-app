@@ -1,6 +1,8 @@
 import { ethers } from "ethers"
 import { Buffer } from "buffer"
 
+// The validation logic was taken from https://www.npmjs.com/package/is-valid-signature
+
 const MAGIC_VALUE = "0x1626ba7e"
 const MAGIC_VALUE_BYTES = "0x20c13b0b"
 

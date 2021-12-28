@@ -28,3 +28,7 @@ Your app is ready to be deployed!
 ## Deployment
 
 You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+
+## shout-out
+
+The validation logic was taken from https://www.npmjs.com/package/is-valid-signature
