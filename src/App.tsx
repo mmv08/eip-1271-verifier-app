@@ -57,7 +57,9 @@ const App = () => {
               <Show
                 when={wallet.loaded}
                 fallback={
-                  <Button onClick={connectWallet}>Connect wallet</Button>
+                  <Button onClick={connectWallet}>
+                    Connect wallet to validate
+                  </Button>
                 }
               >
                 <p>
